@@ -47,5 +47,13 @@
     <p>The smarter way to manage gift lists, share wishlists, and coordinate with family.</p>
     <a class="btn" href="https://apps.apple.com/app/id6738561969">Download on the App Store</a>
   </div>
+  <script type="module">
+    import TelemetryDeck from 'https://cdn.jsdelivr.net/npm/@telemetrydeck/sdk/dist/telemetrydeck.min.js';
+    const td = new TelemetryDeck({
+      appID: 'F9681568-C11D-472E-A2FE-D0F18AAB59B2',
+      clientUser: 'anonymous'
+    });
+    td.signal('webLandingPageView');
+  </script>
 </body>
 </html>

@@ -88,7 +88,13 @@
     </div>
   </div>
 
-  <script>
+  <script type="module">
+    import TelemetryDeck from 'https://cdn.jsdelivr.net/npm/@telemetrydeck/sdk/dist/telemetrydeck.min.js';
+    const td = new TelemetryDeck({
+      appID: 'F9681568-C11D-472E-A2FE-D0F18AAB59B2',
+      clientUser: 'anonymous'
+    });
+
     var path = window.location.pathname;
     var parts = path.split('/').filter(Boolean);
     var listsIdx = parts.indexOf('lists');
@@ -98,9 +104,11 @@
       document.getElementById('share-code').textContent = code;
       document.getElementById('open-btn').href = 'gifted://share?url=' + encodeURIComponent(window.location.href);
       document.title = 'Join ' + code + ' – Gifted';
+      td.signal('webJoinPageView', { shareCode: code });
     } else {
       document.getElementById('join-view').style.display = 'none';
       document.getElementById('notfound-view').style.display = 'block';
+      td.signal('webNotFoundPageView', { path: path });
     }
   </script>
 </body>
