@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join List – Gifted</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 48px 32px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    }
+    .emoji { font-size: 64px; margin-bottom: 16px; }
+    h1 { font-size: 24px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+    .subtitle { font-size: 15px; color: #6b7280; margin-bottom: 28px; line-height: 1.5; }
+    .code-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #9ca3af; margin-bottom: 8px; }
+    .code {
+      font-family: 'SF Mono', 'Menlo', monospace;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      color: #111827;
+      background: #f3f4f6;
+      padding: 14px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+    .divider { border: none; border-top: 1px solid #f3f4f6; margin: 0 0 24px; }
+    .open-label { font-size: 14px; color: #6b7280; margin-bottom: 12px; }
+    .btn {
+      display: block;
+      background: #6366f1;
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 13px;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    .btn:hover { background: #4f46e5; }
+    .btn-secondary {
+      display: block;
+      background: #f3f4f6;
+      color: #374151;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 13px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .btn-secondary:hover { background: #e5e7eb; }
+    .no-code { color: #6b7280; font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🎁</div>
+    <div id="join-view">
+      <h1>You're invited!</h1>
+      <p class="subtitle">Open Gifted to join this shared list.</p>
+      <div class="code-label">Share Code</div>
+      <div class="code" id="share-code">——</div>
+      <hr class="divider">
+      <p class="open-label">Have the app? Open it and enter the code, or download it below.</p>
+      <a class="btn" id="open-btn" href="#">Open in Gifted</a>
+      <a class="btn-secondary" href="https://apps.apple.com/app/id6738561969">Download on the App Store</a>
+    </div>
+    <div id="notfound-view" style="display:none">
+      <h1>Page Not Found</h1>
+      <p class="subtitle">The page you're looking for doesn't exist.</p>
+      <a class="btn" href="/">Go Home</a>
+    </div>
+  </div>
+
+  <script>
+    var path = window.location.pathname;
+    var parts = path.split('/').filter(Boolean);
+    var listsIdx = parts.indexOf('lists');
+
+    if (listsIdx >= 0 && parts.length > listsIdx + 1 && parts[listsIdx + 1] !== 'join') {
+      var code = parts[listsIdx + 1].toUpperCase();
+      document.getElementById('share-code').textContent = code;
+      document.getElementById('open-btn').href = 'gifted://share?url=' + encodeURIComponent(window.location.href);
+      document.title = 'Join ' + code + ' – Gifted';
+    } else {
+      document.getElementById('join-view').style.display = 'none';
+      document.getElementById('notfound-view').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

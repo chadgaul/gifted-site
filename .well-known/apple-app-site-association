@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["XXXXXXXXXX.com.cglab.Gifted"],
+        "components": [
+          { "/": "/lists/*/join" }
+        ]
+      }
+    ]
+  }
+}
