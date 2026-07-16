@@ -3,50 +3,374 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gifted – Gift List App</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #f9fafb;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      text-align: center;
-    }
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 48px 32px;
-      max-width: 400px;
-      width: 100%;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    }
-    .emoji { font-size: 64px; margin-bottom: 16px; }
-    h1 { font-size: 28px; font-weight: 700; color: #111827; margin-bottom: 8px; }
-    p { font-size: 16px; color: #6b7280; line-height: 1.5; margin-bottom: 32px; }
-    .btn {
-      display: inline-block;
-      background: #6366f1;
-      color: white;
-      text-decoration: none;
-      padding: 16px 32px;
-      border-radius: 14px;
-      font-weight: 600;
-      font-size: 17px;
-    }
-    .btn:hover { background: #4f46e5; }
-  </style>
+  <title>Gifted: Christmas List App - Gift Tracker & Budget for iPhone</title>
+  <meta name="description" content="Gifted is the free Christmas list app for iPhone & iPad. Track gifts for everyone, set budgets per person, save ideas all year, and never buy a duplicate again.">
+  <link rel="canonical" href="https://mygiftedapp.com/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/app-icon-180.png">
+  <link rel="apple-touch-icon" href="/assets/app-icon-180.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gifted">
+  <meta property="og:title" content="Gifted: Christmas List App - Gift Tracker & Budget for iPhone">
+  <meta property="og:description" content="Track gifts for everyone on your list, set budgets per person, and save gift ideas all year. Free on the App Store.">
+  <meta property="og:url" content="https://mygiftedapp.com/">
+  <meta property="og:image" content="https://mygiftedapp.com/assets/app-icon-1024.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gifted: Christmas List App - Gift Tracker & Budget for iPhone">
+  <meta name="twitter:description" content="Track gifts for everyone on your list, set budgets per person, and save gift ideas all year. Free on the App Store.">
+  <meta name="twitter:image" content="https://mygiftedapp.com/assets/app-icon-1024.png">
+
+  <meta name="apple-itunes-app" content="app-id=6749803380">
+
+  <!-- Structured data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Gifted: Christmas List",
+    "operatingSystem": "iOS",
+    "applicationCategory": "LifestyleApplication",
+    "description": "Gifted is a Christmas list and gift tracking app for iPhone and iPad. Track gifts by person and event, set budgets, save ideas, and get reminders.",
+    "url": "https://mygiftedapp.com/",
+    "downloadUrl": "https://apps.apple.com/us/app/gifted-christmas-list/id6749803380",
+    "image": "https://mygiftedapp.com/assets/app-icon-1024.png",
+    "author": { "@type": "Organization", "name": "Gifted" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "6" }
+  }
+  </script>
+
+  <!-- Structured data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the best way to keep track of Christmas gifts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A dedicated gift tracking app beats spreadsheets and notes because everything lives in one place: who you're shopping for, what you've bought, what it cost, and what still needs wrapping. Gifted organizes gifts by person and event, tracks each gift from idea to given, and shows your budget in real time." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much should I spend on Christmas gifts per person?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A common guideline is 1–1.5% of annual income for total holiday gifting, then divide it by relationship: more for immediate family, less for extended family, coworkers, and acquaintances. Gifted lets you set an overall event budget plus individual budgets per person, with live progress bars showing what's left." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I remember gift ideas throughout the year?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Capture ideas the moment they happen. When someone mentions something they want, add it to their profile in Gifted with a photo, store link, price, and note. By December you have a ready-made list for every person instead of a blank page." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I avoid buying duplicate gifts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Duplicates happen when purchases aren't logged anywhere. In Gifted every gift has a status - idea, decided, purchased, wrapped, given - so a quick check before you buy shows exactly what's already covered for each person, including gifts stashed away months ago." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there an app to remind me about birthdays and gifts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Gifted pairs date reminders with the actual gift plan. Create a birthday event with a countdown, get notified in time to shop, and see the person's saved gift ideas and budget on the same screen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Gifted free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, Gifted is free to download and use on the App Store. An optional Gifted Pro subscription unlocks extras, but the core gift list, budgets, and tracking are free." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my gift list private and synced across devices?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Gifted is privacy-first: no account required, your data stays in your private iCloud and syncs automatically across your iPhone and iPad. Nobody can peek at their presents." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Gifted as a Christmas shopping list?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Gifted works as a smart Christmas shopping list: every undecided or unpurchased gift is your to-buy list, organized by person, with prices, store links, and budget remaining so you know exactly what to grab and what it will cost." }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="card">
-    <div class="emoji">🎁</div>
-    <h1>Gifted</h1>
-    <p>The smarter way to manage gift lists, share wishlists, and coordinate with family.</p>
-    <a class="btn" href="https://apps.apple.com/app/id6738561969">Download on the App Store</a>
-  </div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="nav-brand" href="/"><img src="/assets/app-icon-180.png" alt="Gifted app icon" width="32" height="32">Gifted</a>
+      <div class="nav-links">
+        <a href="#screenshots">Screenshots</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#guides">Guides</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="https://apps.apple.com/us/app/gifted-christmas-list/id6749803380">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="wrap">
+      <img class="app-icon" src="/assets/app-icon-180.png" alt="Gifted: Christmas List app icon - a wrapped gift with a white ribbon" width="96" height="96">
+      <h1>The Christmas list app that tracks <em>every gift, budget, and idea</em> in one place</h1>
+      <p class="sub">Gifted is the free gift tracker for iPhone &amp; iPad. Plan Christmas, birthdays, and every occasion - know what you've bought, what you've spent, and what's left to do.</p>
+      <div class="stars"><span class="s">★★★★★</span> 5.0 on the App Store</div>
+      <a class="btn" href="https://apps.apple.com/us/app/gifted-christmas-list/id6749803380">
+        <svg class="apple-logo" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download Free on the App Store
+      </a>
+      <p class="btn-sub">Free for iPhone &amp; iPad · No account required · Private iCloud sync</p>
+      <div class="hero-badges">
+        <span>🎄 Christmas lists</span>
+        <span>🎂 Birthday countdowns</span>
+        <span>💰 Budgets per person</span>
+        <span>💡 Gift idea capture</span>
+        <span>🔔 Reminders</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ SCREENSHOTS ============ -->
+  <section id="screenshots">
+    <div class="section-head">
+      <p class="kicker">See It in Action</p>
+      <h2>Your entire gift-giving life, beautifully organized</h2>
+      <p>From the first idea in July to the last bow on Christmas Eve.</p>
+    </div>
+    <div class="shots">
+      <figure class="shot">
+        <img src="/assets/screenshots/screenshot-3.png" alt="Gifted app Christmas list screen showing people with budgets and gifts marked Purchased, Decided, and Wrapped" loading="lazy" width="250">
+        <figcaption>Make Christmas lists for everyone</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/screenshots/screenshot-8.png" alt="Gifted app budget tracking screen showing Christmas budget progress and amount remaining per person" loading="lazy" width="250">
+        <figcaption>Track spending against every budget</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/screenshots/screenshot-5.png" alt="Gifted app events screen listing Christmas, anniversary, Mother's Day, graduation, and birthday events with countdowns" loading="lazy" width="250">
+        <figcaption>Organize every occasion in one calendar</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/screenshots/screenshot-4.png" alt="Gifted app birthday event screen with a days-to-go countdown and gift ideas for the birthday person" loading="lazy" width="250">
+        <figcaption>Birthday countdowns with gift plans</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/screenshots/screenshot-7.png" alt="Gifted app shopping list screen showing gifts moving from Idea to Decided to Purchased" loading="lazy" width="250">
+        <figcaption>Shopping lists that update themselves</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section id="how-it-works" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">How It Works</p>
+        <h2>Three steps to stress-free gift giving</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Add your people &amp; events</h3>
+          <p>Create Christmas, birthdays, anniversaries - any occasion. Recurring events roll over automatically, so next year builds itself.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Capture gifts &amp; set budgets</h3>
+          <p>Save ideas with photos, prices, and store links the moment inspiration strikes. Set a budget for the event and for each person.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Track everything to done</h3>
+          <p>Move each gift from idea → decided → purchased → wrapped → given. Watch budgets update in real time and get reminders before every date.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Why Gifted</p>
+        <h2>A complete gift tracker, not just another list</h2>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="emoji">🎁</div>
+          <h3>Gift status tracking</h3>
+          <p>Every gift moves through a clear pipeline - idea, decided, purchased, wrapped, given - so nothing gets forgotten in a closet.</p>
+        </div>
+        <div class="feature">
+          <div class="emoji">💰</div>
+          <h3>Budgets that actually work</h3>
+          <p>Set spending limits per event and per person. Live progress bars show exactly how much you have left before you overspend.</p>
+        </div>
+        <div class="feature">
+          <div class="emoji">🔁</div>
+          <h3>Recurring events</h3>
+          <p>Christmas and birthdays come every year - your events do too, created automatically with reminders so you're never caught off guard.</p>
+        </div>
+        <div class="feature">
+          <div class="emoji">📸</div>
+          <h3>Photos, links &amp; notes</h3>
+          <p>Attach a photo, paste the store link, jot down sizes and colors. Everything you need to buy the gift is on the gift.</p>
+        </div>
+        <div class="feature">
+          <div class="emoji">📊</div>
+          <h3>Insights &amp; analytics</h3>
+          <p>See spending trends, favorite gift categories, and event readiness at a glance - and export your data anytime.</p>
+        </div>
+        <div class="feature">
+          <div class="emoji">🔒</div>
+          <h3>Private by design</h3>
+          <p>No account, no sharing, no snooping. Your lists live in your private iCloud and sync across iPhone and iPad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GUIDES ============ -->
+  <section id="guides" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Guides</p>
+        <h2>Get better at gift giving</h2>
+        <p>Practical guides to planning, budgeting, and staying organized all year.</p>
+      </div>
+      <div class="guides">
+        <a class="guide-card" href="/guides/how-to-keep-track-of-christmas-gifts/">
+          <div class="emoji">🎄</div>
+          <h3>How to Keep Track of Christmas Gifts</h3>
+          <p>Spreadsheets, notes apps, and why a dedicated gift tracker wins - a system for knowing who's covered and what's left.</p>
+          <span class="more">Read the guide →</span>
+        </a>
+        <a class="guide-card" href="/guides/christmas-budget-per-person/">
+          <div class="emoji">💵</div>
+          <h3>How Much to Spend on Christmas Gifts Per Person</h3>
+          <p>Realistic budget guidelines by relationship, plus how to set limits you'll actually stick to this season.</p>
+          <span class="more">Read the guide →</span>
+        </a>
+        <a class="guide-card" href="/guides/gift-ideas-tracker/">
+          <div class="emoji">💡</div>
+          <h3>How to Remember Gift Ideas All Year</h3>
+          <p>Stop losing perfect ideas. A simple capture habit that makes December shopping effortless.</p>
+          <span class="more">Read the guide →</span>
+        </a>
+        <a class="guide-card" href="/guides/avoid-duplicate-gifts/">
+          <div class="emoji">🙈</div>
+          <h3>How to Avoid Buying Duplicate Gifts</h3>
+          <p>Forgot what you already bought - or where you hid it? Here's how to never double-buy again.</p>
+          <span class="more">Read the guide →</span>
+        </a>
+        <a class="guide-card" href="/guides/birthday-gift-reminder/">
+          <div class="emoji">🎂</div>
+          <h3>Never Forget a Birthday Gift Again</h3>
+          <p>Pair reminders with an actual gift plan so birthdays stop sneaking up on you.</p>
+          <span class="more">Read the guide →</span>
+        </a>
+        <a class="guide-card" href="/guides/christmas-shopping-list-app/">
+          <div class="emoji">🛍️</div>
+          <h3>The Smarter Christmas Shopping List</h3>
+          <p>How to start early, shop the sales, and walk into December already done.</p>
+          <span class="more">Read the guide →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>What is the best way to keep track of Christmas gifts?</summary>
+          <div class="a">A dedicated gift tracking app beats spreadsheets and scattered notes because everything lives in one place: who you're shopping for, what you've bought, what it cost, and what still needs wrapping. Gifted organizes gifts by person and event and tracks each one from idea to given. <a href="/guides/how-to-keep-track-of-christmas-gifts/">Learn more →</a></div>
+        </details>
+        <details>
+          <summary>How much should I spend on Christmas gifts per person?</summary>
+          <div class="a">A common guideline is 1–1.5% of your annual income for total holiday gifting, divided by relationship - more for immediate family, less for coworkers and acquaintances. Gifted lets you set an overall event budget plus individual per-person budgets with live progress bars. <a href="/guides/christmas-budget-per-person/">Learn more →</a></div>
+        </details>
+        <details>
+          <summary>How do I remember gift ideas throughout the year?</summary>
+          <div class="a">Capture ideas the moment they happen. When someone mentions something they'd love, add it to their profile in Gifted with a photo, link, and price. By December you have a ready-made list for every person. <a href="/guides/gift-ideas-tracker/">Learn more →</a></div>
+        </details>
+        <details>
+          <summary>How do I avoid buying duplicate gifts?</summary>
+          <div class="a">Duplicates happen when purchases aren't logged anywhere. In Gifted every gift has a status - idea, decided, purchased, wrapped, given - so a quick check before buying shows what's already covered, including gifts stashed away months ago. <a href="/guides/avoid-duplicate-gifts/">Learn more →</a></div>
+        </details>
+        <details>
+          <summary>Is there an app to remind me about birthdays and gifts?</summary>
+          <div class="a">Yes - Gifted pairs date reminders with the actual gift plan. Create a birthday event with a countdown, get notified in time to shop, and see saved gift ideas and budget on the same screen. <a href="/guides/birthday-gift-reminder/">Learn more →</a></div>
+        </details>
+        <details>
+          <summary>Can I use Gifted as a Christmas shopping list?</summary>
+          <div class="a">Yes. Every undecided or unpurchased gift becomes your to-buy list, organized by person with prices, store links, and budget remaining. <a href="/guides/christmas-shopping-list-app/">Learn more →</a></div>
+        </details>
+        <details>
+          <summary>Is Gifted free?</summary>
+          <div class="a">Yes - Gifted is free to download and use. An optional Gifted Pro subscription unlocks extras, but the core gift lists, budgets, and tracking are free. <a href="https://apps.apple.com/us/app/gifted-christmas-list/id6749803380">Get it on the App Store →</a></div>
+        </details>
+        <details>
+          <summary>Is my gift list private and synced across devices?</summary>
+          <div class="a">Yes. Gifted is privacy-first: no account required, your data stays in your private iCloud and syncs automatically across iPhone and iPad. Nobody can peek at their presents.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="cta-final">
+    <div class="wrap">
+      <img class="app-icon" src="/assets/app-icon-180.png" alt="Gifted app icon" width="76" height="76">
+      <h2>Be the most thoughtful gift-giver in your circle</h2>
+      <p class="sub" style="max-width:560px;margin:0 auto 28px;color:var(--ink-soft);">Download Gifted free and turn gift chaos into a plan - budgets, ideas, reminders, and lists that run themselves.</p>
+      <a class="btn" href="https://apps.apple.com/us/app/gifted-christmas-list/id6749803380">
+        <svg class="apple-logo" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Download Free on the App Store
+      </a>
+      <p class="btn-sub">★★★★★ 5.0 · Free · iPhone &amp; iPad</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col" style="max-width:280px;">
+          <div class="foot-brand"><img src="/assets/app-icon-180.png" alt="Gifted app icon" width="28" height="28">Gifted</div>
+          <p>The Christmas list &amp; gift tracking app for iPhone and iPad. Private, simple, and free.</p>
+        </div>
+        <div class="foot-col">
+          <h4>App</h4>
+          <a href="https://apps.apple.com/us/app/gifted-christmas-list/id6749803380">Download on the App Store</a>
+          <a href="/#screenshots">Screenshots</a>
+          <a href="/#how-it-works">How It Works</a>
+          <a href="/#faq">FAQ</a>
+        </div>
+        <div class="foot-col">
+          <h4>Guides</h4>
+          <a href="/guides/how-to-keep-track-of-christmas-gifts/">Track Christmas Gifts</a>
+          <a href="/guides/christmas-budget-per-person/">Christmas Budget Per Person</a>
+          <a href="/guides/gift-ideas-tracker/">Remember Gift Ideas</a>
+          <a href="/guides/avoid-duplicate-gifts/">Avoid Duplicate Gifts</a>
+          <a href="/guides/birthday-gift-reminder/">Birthday Gift Reminders</a>
+          <a href="/guides/christmas-shopping-list-app/">Christmas Shopping List</a>
+        </div>
+        <div class="foot-col">
+          <h4>Legal</h4>
+          <a href="https://chadgaul.github.io/app-pages/privacy-policy/">Privacy Policy</a>
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+        </div>
+      </div>
+      <div class="legal">© 2026 Gifted: Christmas List. Apple, the Apple logo, and App Store are trademarks of Apple Inc.</div>
+    </div>
+  </footer>
+
   <script type="module">
     import TelemetryDeck from 'https://cdn.jsdelivr.net/npm/@telemetrydeck/sdk/dist/telemetrydeck.min.js';
     const td = new TelemetryDeck({
@@ -54,6 +378,9 @@
       clientUser: 'anonymous'
     });
     td.signal('webLandingPageView');
+    document.querySelectorAll('a[href^="https://apps.apple.com"]').forEach(a => {
+      a.addEventListener('click', () => td.signal('webAppStoreClick'));
+    });
   </script>
 </body>
 </html>
